@@ -7,7 +7,6 @@ import javafx.application.Platform
 import javafx.scene.Scene
 import javafx.scene.layout.HBox
 import javafx.stage.Stage
-import processing.javafx.PSurfaceFX.PApplicationFX.surface
 import kotlin.concurrent.thread
 import kotlin.system.exitProcess
 
@@ -28,18 +27,17 @@ class Main : Application() {
 
         // setup on shown event
         primaryStage.setOnShowing {
-            val sketch = Sketch()
-            sketch.run()
+            Sketch.run()
 
             thread {
-                sketch.runningMutex.acquire()
+                Sketch.runningMutex.acquire()
                 Platform.runLater {
-                    val newtCanvas = sketch.surface.native as GLWindow
+                    val newtCanvas = Sketch.surface.native as GLWindow
 
                     // include jfx panel
                     val glPanel = NewtCanvasJFX(newtCanvas)
-                    glPanel.width = sketch.width.toDouble()
-                    glPanel.height = sketch.height.toDouble()
+                    glPanel.width = Sketch.width.toDouble()
+                    glPanel.height = Sketch.height.toDouble()
                     box.children.add(glPanel)
                 }
             }

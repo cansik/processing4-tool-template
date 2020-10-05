@@ -44,7 +44,3 @@ fun <T : Point> MutableList<MutableList<T>>.combinePoints(): MutableList<Point> 
 fun Point.distance(p2: Point): Double {
     return Math.sqrt(Math.pow(p2.x - this.x, 2.0) + Math.pow(p2.y - this.y, 2.0))
 }
-
-fun Point.map(x1: Double, y1: Double, x2: Double, y2: Double): Point {
-    return Point(Sketch.map(this.x, 0.0, x1, 0.0, x2), Sketch.map(this.y, 0.0, y1, 0.0, y2))
-}

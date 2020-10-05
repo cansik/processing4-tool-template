@@ -8,14 +8,7 @@ import java.util.concurrent.Semaphore
 /**
  * Created by cansik on 04.02.17.
  */
-class Sketch : PApplet() {
-    companion object {
-        @JvmStatic
-        fun map(value: Double, start1: Double, stop1: Double, start2: Double, stop2: Double): Double {
-            return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1))
-        }
-    }
-
+object Sketch : PApplet() {
     val runningMutex = Semaphore(0)
 
     init {
