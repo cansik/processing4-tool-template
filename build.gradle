@@ -51,7 +51,7 @@ dependencies {
 
 application {
     mainClassName = "ch.bildspur.tool.Main"
-    applicationDefaultJvmArgs = ["-Djava.library.path= --add-opens javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED --add-opens javafx.graphics/javafx.stage=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.tk.quantum=ALL-UNNAMED --add-opens javafx.graphics/com.sun.glass.ui=ALL-UNNAMED"]
+    applicationDefaultJvmArgs = ["-Djava.library.path=", "--add-opens", "javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED", "--add-opens", "javafx.graphics/javafx.stage=ALL-UNNAMED", "--add-opens", "javafx.graphics/com.sun.javafx.tk.quantum=ALL-UNNAMED", "--add-opens", "javafx.graphics/com.sun.glass.ui=ALL-UNNAMED"]
 }
 
 task fatJar(type: Jar) {
