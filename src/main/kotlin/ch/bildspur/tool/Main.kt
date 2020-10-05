@@ -23,6 +23,8 @@ class Main : Application() {
 
         primaryStage.title = "Tool"
         primaryStage.scene = Scene(box)
+        primaryStage.width = 600.0
+        primaryStage.height = 400.0
 
         // setup on shown event
         primaryStage.setOnShowing {
@@ -34,10 +36,10 @@ class Main : Application() {
                 Platform.runLater {
                     val newtCanvas = sketch.surface.native as GLWindow
 
-                    // try to include it
+                    // include jfx panel
                     val glPanel = NewtCanvasJFX(newtCanvas)
-                    glPanel.width = 300.0
-                    glPanel.height = 300.0
+                    glPanel.width = sketch.width.toDouble()
+                    glPanel.height = sketch.height.toDouble()
                     box.children.add(glPanel)
                 }
             }
