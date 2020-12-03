@@ -2,7 +2,7 @@
 A basic template to create processing4 tools.
 It combines a processing sketch together with a JavaFX window. The GLWindow is directly embedded into the JavaFX application.
 
-To use this repo, just [click here to generate](https://github.com/cansik/processing4-tool-template/generate) your own!
+To use this repo, fork or re-upload it!
 
 ### Usage
 
